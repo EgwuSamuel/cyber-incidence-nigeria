@@ -1,0 +1,7 @@
+task,model,macro_f1_observed,null_mean,null_95pct,p_perm
+A,Random Forest,0.4702,0.4862,0.6249,0.5446
+A,CatBoost,0.6052,0.4817,0.6044,0.0594
+B1,Random Forest,0.297,0.2301,0.3667,0.2475
+B1,CatBoost,0.2794,0.2376,0.3604,0.2574
+B2,Random Forest,0.5087,0.2088,0.3332,0.0099
+B2,CatBoost,0.3927,0.2217,0.3624,0.0198

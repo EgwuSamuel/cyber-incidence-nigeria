@@ -1,0 +1,25 @@
+sector,attack_group,horizon_months,n_people,incidents_last_12m,observed_per_100
+Education,Account takeover,3,28,4,3.571
+Education,Account takeover,6,28,4,7.143
+Education,Financial fraud / scams,3,28,1,0.893
+Education,Financial fraud / scams,6,28,1,1.786
+Education,Phishing / social engineering,3,28,2,1.786
+Education,Phishing / social engineering,6,28,2,3.571
+Education,Malware / ransomware / DDoS,3,28,1,0.893
+Education,Malware / ransomware / DDoS,6,28,1,1.786
+Information Technology,Account takeover,3,23,1,1.087
+Information Technology,Account takeover,6,23,1,2.174
+Information Technology,Financial fraud / scams,3,23,1,1.087
+Information Technology,Financial fraud / scams,6,23,1,2.174
+Information Technology,Phishing / social engineering,3,23,1,1.087
+Information Technology,Phishing / social engineering,6,23,1,2.174
+Information Technology,Malware / ransomware / DDoS,3,23,2,2.174
+Information Technology,Malware / ransomware / DDoS,6,23,2,4.348
+Other sectors,Account takeover,3,15,1,1.667
+Other sectors,Account takeover,6,15,1,3.333
+Other sectors,Financial fraud / scams,3,15,2,3.333
+Other sectors,Financial fraud / scams,6,15,2,6.667
+Other sectors,Phishing / social engineering,3,15,0,0.0
+Other sectors,Phishing / social engineering,6,15,0,0.0
+Other sectors,Malware / ransomware / DDoS,3,15,0,0.0
+Other sectors,Malware / ransomware / DDoS,6,15,0,0.0

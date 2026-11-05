@@ -1,0 +1,49 @@
+model,sector,horizon_months,attack_group,n_people,expected_per_100,ci_low,ci_high
+Random Forest,Education,3,Account takeover,28,10.865,9.214,12.742
+Random Forest,Education,3,Financial fraud / scams,28,7.07,5.916,8.239
+Random Forest,Education,3,Malware / ransomware / DDoS,28,5.176,4.299,6.139
+Random Forest,Education,3,Phishing / social engineering,28,4.607,3.797,5.387
+Random Forest,Education,6,Account takeover,28,21.73,18.429,25.484
+Random Forest,Education,6,Financial fraud / scams,28,14.141,11.832,16.479
+Random Forest,Education,6,Malware / ransomware / DDoS,28,10.353,8.597,12.278
+Random Forest,Education,6,Phishing / social engineering,28,9.213,7.595,10.775
+Random Forest,Information Technology,3,Account takeover,23,15.521,11.519,20.253
+Random Forest,Information Technology,3,Financial fraud / scams,23,5.756,4.623,7.117
+Random Forest,Information Technology,3,Malware / ransomware / DDoS,23,7.439,6.404,8.632
+Random Forest,Information Technology,3,Phishing / social engineering,23,4.357,3.462,5.462
+Random Forest,Information Technology,6,Account takeover,23,31.041,23.038,40.507
+Random Forest,Information Technology,6,Financial fraud / scams,23,11.512,9.245,14.234
+Random Forest,Information Technology,6,Malware / ransomware / DDoS,23,14.878,12.807,17.264
+Random Forest,Information Technology,6,Phishing / social engineering,23,8.714,6.925,10.924
+Random Forest,Other sectors,3,Account takeover,15,19.469,13.269,27.136
+Random Forest,Other sectors,3,Financial fraud / scams,15,12.498,10.041,15.127
+Random Forest,Other sectors,3,Malware / ransomware / DDoS,15,4.606,3.445,5.757
+Random Forest,Other sectors,3,Phishing / social engineering,15,7.609,6.29,8.894
+Random Forest,Other sectors,6,Account takeover,15,38.938,26.539,54.273
+Random Forest,Other sectors,6,Financial fraud / scams,15,24.997,20.083,30.255
+Random Forest,Other sectors,6,Malware / ransomware / DDoS,15,9.212,6.89,11.514
+Random Forest,Other sectors,6,Phishing / social engineering,15,15.219,12.579,17.787
+CatBoost,Education,3,Account takeover,28,11.99,8.352,16.147
+CatBoost,Education,3,Financial fraud / scams,28,7.463,4.525,11.594
+CatBoost,Education,3,Malware / ransomware / DDoS,28,5.648,3.376,8.485
+CatBoost,Education,3,Phishing / social engineering,28,4.484,2.908,6.139
+CatBoost,Education,6,Account takeover,28,23.981,16.705,32.295
+CatBoost,Education,6,Financial fraud / scams,28,14.925,9.051,23.188
+CatBoost,Education,6,Malware / ransomware / DDoS,28,11.296,6.751,16.97
+CatBoost,Education,6,Phishing / social engineering,28,8.967,5.816,12.278
+CatBoost,Information Technology,3,Account takeover,23,18.039,9.881,28.854
+CatBoost,Information Technology,3,Financial fraud / scams,23,3.531,2.026,5.73
+CatBoost,Information Technology,3,Malware / ransomware / DDoS,23,6.482,4.01,9.946
+CatBoost,Information Technology,3,Phishing / social engineering,23,5.153,1.887,10.781
+CatBoost,Information Technology,6,Account takeover,23,36.079,19.763,57.708
+CatBoost,Information Technology,6,Financial fraud / scams,23,7.062,4.052,11.461
+CatBoost,Information Technology,6,Malware / ransomware / DDoS,23,12.963,8.02,19.892
+CatBoost,Information Technology,6,Phishing / social engineering,23,10.306,3.773,21.561
+CatBoost,Other sectors,3,Account takeover,15,21.46,12.21,31.327
+CatBoost,Other sectors,3,Financial fraud / scams,15,11.729,7.577,16.385
+CatBoost,Other sectors,3,Malware / ransomware / DDoS,15,3.549,2.253,5.351
+CatBoost,Other sectors,3,Phishing / social engineering,15,7.433,3.599,12.432
+CatBoost,Other sectors,6,Account takeover,15,42.919,24.42,62.653
+CatBoost,Other sectors,6,Financial fraud / scams,15,23.459,15.155,32.769
+CatBoost,Other sectors,6,Malware / ransomware / DDoS,15,7.097,4.506,10.701
+CatBoost,Other sectors,6,Phishing / social engineering,15,14.866,7.198,24.864

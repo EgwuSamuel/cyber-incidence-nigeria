@@ -1,0 +1,39 @@
+variable,category,n,pct
+gender,Male,47,71.2
+gender,Female,19,28.8
+zone,South West,47,71.2
+zone,North Central,7,10.6
+zone,North East,4,6.1
+zone,South East,3,4.5
+zone,South South,3,4.5
+zone,North West,2,3.0
+occupation,Civil Servant,16,24.2
+occupation,Teacher/Lecturer,14,21.2
+occupation,IT Professional,9,13.6
+occupation,Student,9,13.6
+occupation,Other,6,9.1
+occupation,Self-Employed,4,6.1
+occupation,Business Owner,3,4.5
+occupation,Unemployed,2,3.0
+occupation,Engineer,1,1.5
+occupation,Retired,1,1.5
+occupation,Healthcare Worker,1,1.5
+organization,Educational Institution,23,34.8
+organization,Government/Public Sector,19,28.8
+organization,Private Company,8,12.1
+organization,Self-Employed/Own Business,6,9.1
+organization,Other,3,4.5
+organization,Financial Institution,2,3.0
+organization,Healthcare Organization,2,3.0
+organization,Manufacturing/Industrial Organization,1,1.5
+organization,Agricultural Organization,1,1.5
+organization,Non-Governmental Organization (NGO),1,1.5
+sector,Education,28,42.4
+sector,Information Technology,23,34.8
+sector,Healthcare,6,9.1
+sector,Agriculture,3,4.5
+sector,Hospitality and Tourism,2,3.0
+sector,Retail and Wholesale,1,1.5
+sector,Construction,1,1.5
+sector,Consulting,1,1.5
+sector,Media and Communications,1,1.5

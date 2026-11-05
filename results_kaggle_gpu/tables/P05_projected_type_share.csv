@@ -1,0 +1,25 @@
+model,sector,attack_group,share_pct
+Random Forest,Education,Account takeover,39.2
+Random Forest,Education,Financial fraud / scams,25.5
+Random Forest,Education,Malware / ransomware / DDoS,18.7
+Random Forest,Education,Phishing / social engineering,16.6
+Random Forest,Information Technology,Account takeover,46.9
+Random Forest,Information Technology,Financial fraud / scams,17.4
+Random Forest,Information Technology,Malware / ransomware / DDoS,22.5
+Random Forest,Information Technology,Phishing / social engineering,13.2
+Random Forest,Other sectors,Account takeover,44.1
+Random Forest,Other sectors,Financial fraud / scams,28.3
+Random Forest,Other sectors,Malware / ransomware / DDoS,10.4
+Random Forest,Other sectors,Phishing / social engineering,17.2
+CatBoost,Education,Account takeover,40.5
+CatBoost,Education,Financial fraud / scams,25.2
+CatBoost,Education,Malware / ransomware / DDoS,19.1
+CatBoost,Education,Phishing / social engineering,15.2
+CatBoost,Information Technology,Account takeover,54.3
+CatBoost,Information Technology,Financial fraud / scams,10.6
+CatBoost,Information Technology,Malware / ransomware / DDoS,19.5
+CatBoost,Information Technology,Phishing / social engineering,15.5
+CatBoost,Other sectors,Account takeover,48.6
+CatBoost,Other sectors,Financial fraud / scams,26.6
+CatBoost,Other sectors,Malware / ransomware / DDoS,8.0
+CatBoost,Other sectors,Phishing / social engineering,16.8

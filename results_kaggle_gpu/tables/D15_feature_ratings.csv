@@ -1,0 +1,8 @@
+feature,n,mean,median,ci_low,ci_high,pct_4_or_5
+Website/mobile app experience,38,3.55,4.0,3.18,3.89,55.3
+Email/SMS notifications,38,3.53,4.0,3.11,3.92,52.6
+Easy reporting interface,38,3.53,4.0,3.13,3.89,55.3
+Incident tracking,38,3.5,4.0,3.05,3.92,52.6
+Real-time alerts,38,3.5,4.0,3.03,3.95,55.3
+AI-based incident classification,38,2.95,3.0,2.53,3.34,28.9
+Anonymous reporting,38,2.82,3.0,2.39,3.26,28.9

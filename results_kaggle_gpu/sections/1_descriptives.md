@@ -1,0 +1,21 @@
+## Objectives 1-2: state of incidents and people's experience by sector
+
+- Respondents: **66**; experienced a cyber-attack or online fraud: **38 (57.6%, 95% CI 45.6-68.8%)**. Questions after Q9 were answered by victims only (n = 38).
+- Gender: 47 male (71.2%), 19 female. Zone: 47 of 66 (71.2%) live in the South West (sample is not nationally representative).
+- Victimisation by sector: Education 17/28 (60.7%); Information Technology 11/23 (47.8%); Other sectors 10/15 (66.7%)
+- Most common incident types (n = 38): Account Hijacking 6 (15.8%); Social Media Account Compromise 6 (15.8%); Phishing 5 (13.2%); Financial/online banking fraud 4 (10.5%); Identity Theft 3 (7.9%)
+- Grouped: Account takeover 15 (39.5%); Financial fraud / scams 9 (23.7%); Malware / ransomware / DDoS 7 (18.4%); Phishing / social engineering 6 (15.8%); Other 1 (2.6%)
+- Incident year: 2020: 1, 2022: 7, 2023: 7, 2024: 3, 2025: 6, 2026: 14
+- Platforms affected (multi-select, % of victims): Social Media Platform 17 (44.7%); Mobile Application 12 (31.6%); Financial/Payment System 5 (13.2%); Website/Web Application 5 (13.2%); Computer/Laptop 5 (13.2%)
+- Impact: sensitive data compromised in 18/38 (47.4%); normal operations disrupted in 27/38 (71.1%); loss band: N0 - 500,000 34; N500,000 - 2,000,000 2; N10,000,000 - 50,000,000 1; N2,000,000 - 10,000,000 1
+- Ever reported a cyber incident: **16/38 (42.1%, 95% CI 27.9-57.8%)**; not reported: 22 (57.9%).
+- Where reported (Q20, cleaned): Not reported 18; Bank 6; Police cybercrime unit 6; Platform / service provider 3; Other 2; NCC-CSIRT 2; ngCERT 1
+- Reasons for not reporting (multi-select, among the 22 who never reported): Lack of awareness of reporting channels 8 (36.4%); Incident was not serious enough 4 (18.2%); Other (please specify) 3 (13.6%); Reporting was not mandatory 2 (9.1%); Belief that no action would be taken 2 (9.1%); Lack of evidence or information about the incident 2 (9.1%)
+- Awareness of reporting channels: Fairly Aware 18 (47.4%); Aware 12 (31.6%); Not Aware 8 (21.1%). (The 77.84% 'did not know where to report' figure is from Ahmad et al. 2020, not this survey.)
+- Attack group by sector (n = 37): Education: Account takeover 35%, Financial fraud 29%, Phishing 18%, Malware 18%; Information Technology: Account takeover 46%, Financial fraud 9%, Phishing 9%, Malware 36%; Other sectors: Account takeover 44%, Financial fraud 33%, Phishing 22%, Malware 0%. Association: permutation chi-square p = 0.480, Cramer's V = 0.28 (95% CI 0.23-0.54).
+- Feature ratings (1-5, mean): Website/mobile app experience 3.55; Email/SMS notifications 3.53; Easy reporting interface 3.53; Incident tracking 3.5; Real-time alerts 3.5; AI-based incident classification 2.95; Anonymous reporting 2.82
+- Encourager (multi-select): Feedback on the outcome 24 (63.2%); Assurance of confidentiality 21 (55.3%); A simple reporting process 16 (42.1%)
+- Language (multi-select): English 35 (92.1%); Yoruba 2 (5.3%); Hausa 2 (5.3%); Pidgin 1 (2.6%)
+- Mode (multi-select): Evidence-based(Screenshot, Log files, Document) 21 (55.3%); Text-based 18 (47.4%); Voice-based 13 (34.2%); Video-based 3 (7.9%)
+- Channel (multi-select): Email 23 (60.5%); WhatsApp 16 (42.1%); Phone Call 15 (39.5%); In-person 8 (21.1%); SMS 4 (10.5%)
+- Association tests (permutation chi-square, 10000 shuffles): victim x sector_group: p = 0.455, V = 0.15; victim x gender: p = 0.012, V = 0.33; victim x occupation_group: p = 0.661, V = 0.20; ever_reported x sector_group: p = 0.276, V = 0.28; attack_group x sector_group: p = 0.480, V = 0.28

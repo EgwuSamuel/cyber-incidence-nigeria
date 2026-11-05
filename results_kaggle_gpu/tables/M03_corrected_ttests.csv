@@ -1,0 +1,19 @@
+task,comparison,augmentation,mean_diff_macro_f1,t,p
+A,CatBoost - Random Forest,none,0.0081,0.1274,0.899
+A,Random Forest - majority baseline,none,0.1806,2.3922,0.02
+A,CatBoost - majority baseline,none,0.1887,2.7062,0.0089
+A,CatBoost - Random Forest,SMOTEN,0.0163,0.2306,0.8184
+A,Random Forest - majority baseline,SMOTEN,0.1807,2.2042,0.0314
+A,CatBoost - majority baseline,SMOTEN,0.1969,2.5188,0.0145
+B1,CatBoost - Random Forest,none,0.0549,0.7748,0.4416
+B1,Random Forest - majority baseline,none,0.0838,1.0853,0.2822
+B1,CatBoost - majority baseline,none,0.1387,1.9994,0.0502
+B1,CatBoost - Random Forest,SMOTEN,0.0305,0.4508,0.6538
+B1,Random Forest - majority baseline,SMOTEN,0.0704,1.0819,0.2837
+B1,CatBoost - majority baseline,SMOTEN,0.1009,1.4199,0.1609
+B2,CatBoost - Random Forest,none,-0.0442,-0.672,0.5042
+B2,Random Forest - majority baseline,none,0.2803,4.9994,0.0
+B2,CatBoost - majority baseline,none,0.2361,3.748,0.0004
+B2,CatBoost - Random Forest,SMOTEN,-0.0329,-0.4689,0.6409
+B2,Random Forest - majority baseline,SMOTEN,0.2775,3.7164,0.0005
+B2,CatBoost - majority baseline,SMOTEN,0.2446,3.4663,0.001
