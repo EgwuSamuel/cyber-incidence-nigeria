@@ -1,0 +1,13 @@
+model,sector,horizon_months,prob_any_incident_pct,ci_low,ci_high
+Random Forest,Education,3,24.03,22.22,25.97
+Random Forest,Education,6,42.03,39.35,44.86
+Random Forest,Information Technology,3,27.63,24.39,31.28
+Random Forest,Information Technology,6,46.91,42.41,51.82
+Random Forest,Other sectors,3,35.07,30.61,39.6
+Random Forest,Other sectors,6,57.07,51.49,62.7
+CatBoost,Education,3,23.97,19.44,28.63
+CatBoost,Education,6,40.71,34.04,47.56
+CatBoost,Information Technology,3,23.53,16.23,32.05
+CatBoost,Information Technology,6,37.81,27.8,48.31
+CatBoost,Other sectors,3,31.48,23.34,39.69
+CatBoost,Other sectors,6,50.27,39.3,60.89

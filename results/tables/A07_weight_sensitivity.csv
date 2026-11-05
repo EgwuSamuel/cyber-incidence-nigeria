@@ -1,0 +1,11 @@
+criterion,change,top_threat,spearman_vs_base
+C1,-19%,Account takeover,1.0
+C1,+19%,Account takeover,1.0
+C2,-19%,Account takeover,1.0
+C2,+19%,Account takeover,1.0
+C3,-19%,Account takeover,1.0
+C3,+19%,Account takeover,1.0
+C4,-19%,Account takeover,1.0
+C4,+19%,Account takeover,1.0
+C5,-19%,Account takeover,1.0
+C5,+19%,Account takeover,1.0

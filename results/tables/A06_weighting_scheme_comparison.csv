@@ -1,0 +1,7 @@
+scheme,Account takeover,Financial fraud / scams,Phishing / social engineering,Malware / ransomware / DDoS,top_threat,spearman_vs_combined
+Combined,0.1813,0.0787,0.0583,0.066,Account takeover,1.0
+AHP only,0.1382,0.0606,0.041,0.0562,Account takeover,1.0
+Entropy only,0.2203,0.0904,0.0753,0.0766,Account takeover,1.0
+Equal,0.1442,0.0731,0.0468,0.0742,Account takeover,0.8
+Mix 25% AHP / 75% entropy,0.2032,0.0862,0.0676,0.0716,Account takeover,1.0
+Mix 75% AHP / 25% entropy,0.159,0.0697,0.0491,0.0607,Account takeover,1.0

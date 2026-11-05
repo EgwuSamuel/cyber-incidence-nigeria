@@ -1,0 +1,5 @@
+attack_group,n,n_recent,n_earlier,mean_C,p_recent,p_earlier,p_hat,FTI,rank_severity,rank_FTI,FTI_ci_low,FTI_ci_high,P_rank1
+Account takeover,15,8,7,0.467,0.4,0.4118,0.3882,0.1813,2,1,0.0,0.4428,0.6085
+Financial fraud / scams,9,5,4,0.2975,0.25,0.2353,0.2647,0.0787,3,2,0.0,0.2202,0.1355
+Phishing / social engineering,6,3,3,0.4716,0.15,0.1765,0.1235,0.0583,1,4,0.0,0.2618,0.1415
+Malware / ransomware / DDoS,7,4,3,0.2953,0.2,0.1765,0.2235,0.066,4,3,0.0,0.217,0.1145

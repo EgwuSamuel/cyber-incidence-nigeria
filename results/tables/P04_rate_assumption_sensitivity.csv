@@ -1,0 +1,37 @@
+model,sector,horizon_months,rate_assumption,expected_all_types_per_100,prob_any_incident_pct
+Random Forest,Education,3,low (x0.5),13.859,12.889
+Random Forest,Education,3,base,27.718,24.029
+Random Forest,Education,3,high (x2),55.437,42.026
+Random Forest,Education,6,low (x0.5),27.718,24.029
+Random Forest,Education,6,base,55.437,42.026
+Random Forest,Education,6,high (x2),110.873,65.833
+Random Forest,Information Technology,3,low (x0.5),16.536,15.083
+Random Forest,Information Technology,3,base,33.073,27.632
+Random Forest,Information Technology,3,high (x2),66.145,46.915
+Random Forest,Information Technology,6,low (x0.5),33.073,27.632
+Random Forest,Information Technology,6,base,66.145,46.915
+Random Forest,Information Technology,6,high (x2),132.291,70.433
+Random Forest,Other sectors,3,low (x0.5),22.091,19.619
+Random Forest,Other sectors,3,base,44.183,35.074
+Random Forest,Other sectors,3,high (x2),88.366,57.071
+Random Forest,Other sectors,6,low (x0.5),44.183,35.074
+Random Forest,Other sectors,6,base,88.366,57.071
+Random Forest,Other sectors,6,high (x2),176.732,80.337
+CatBoost,Education,3,low (x0.5),14.411,13.104
+CatBoost,Education,3,base,28.821,23.968
+CatBoost,Education,3,high (x2),57.643,40.712
+CatBoost,Education,6,low (x0.5),28.821,23.968
+CatBoost,Education,6,base,57.643,40.712
+CatBoost,Education,6,high (x2),115.286,61.71
+CatBoost,Information Technology,3,low (x0.5),15.955,13.501
+CatBoost,Information Technology,3,base,31.91,23.53
+CatBoost,Information Technology,3,high (x2),63.82,37.809
+CatBoost,Information Technology,6,low (x0.5),31.91,23.53
+CatBoost,Information Technology,6,base,63.82,37.809
+CatBoost,Information Technology,6,high (x2),127.64,54.974
+CatBoost,Other sectors,3,low (x0.5),20.653,17.909
+CatBoost,Other sectors,3,base,41.305,31.478
+CatBoost,Other sectors,3,high (x2),82.61,50.266
+CatBoost,Other sectors,6,low (x0.5),41.305,31.478
+CatBoost,Other sectors,6,base,82.61,50.266
+CatBoost,Other sectors,6,high (x2),165.221,70.481

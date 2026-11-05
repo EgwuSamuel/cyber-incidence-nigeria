@@ -1,0 +1,6 @@
+code,criterion,variable,w_Combined,w_AHP_only,w_Entropy_only,w_Equal
+C1,Financial loss,loss_ordinal,0.1804,0.3133,0.0475,0.2
+C2,Platforms affected,n_platforms,0.0965,0.0986,0.0944,0.2
+C3,Sensitive data compromised,sensitive,0.3452,0.3133,0.3771,0.2
+C4,Operations disrupted,disrupted,0.1805,0.1763,0.1846,0.2
+C5,Not reported,not_reported,0.1975,0.0986,0.2964,0.2
