@@ -1,6 +1,6 @@
 # Experiment results
 
-Generated 2026-11-05 by `python run_all.py` (steps re-run individually with --only are merged in) (seed 42, 2000 bootstraps, 3-fold x 20 repeated CV). Every number below comes from `results/tables/`; figures are in `results/figures/`.
+Generated 2026-11-05 by `python run_all.py` (steps re-run individually with --only are merged in) (seed 42, CatBoost on CPU, 2000 bootstraps, 3-fold x 20 repeated CV). Every number below comes from `results/tables/`; figures are in `results/figures/`.
 
 **Data:** the original 66 survey responses (38 victims). No synthetic respondents are reported. Synthetic rows (SMOTEN) are generated only inside model training folds (Objective 4a) and never appear in any count, table, AHP-TOPSIS score or test fold.
 

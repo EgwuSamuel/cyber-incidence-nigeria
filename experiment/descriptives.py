@@ -199,7 +199,7 @@ def figures(vic, at, ct_pct, ct, rs, rat, pl):
     ax.errorbar(rat["mean"], y, xerr=[rat["mean"] - rat.ci_low, rat.ci_high - rat["mean"]], fmt="o",
                 color=SERIES[0], ecolor=INK2, elinewidth=1, capsize=3, markersize=6)
     ax.set_yticks(y); ax.set_yticklabels(rat.feature); ax.set_xlim(1, 5)
-    ax.set_xlabel("Mean rating (1 = not important, 5 = very important), 95% bootstrap CI")
+    ax.set_xlabel("Mean importance rating (1-5) with 95% bootstrap CI")
     ax.grid(axis="y", visible=False)
     ax.set_title("Fig. 4  What respondents want from a reporting system"); save(fig, "fig04_feature_ratings")
 
