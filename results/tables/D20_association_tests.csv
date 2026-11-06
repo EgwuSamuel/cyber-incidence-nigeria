@@ -1,6 +1,6 @@
-test,chi2,p_perm,cramers_v,v_lo,v_hi,n
-victim x sector_group,1.5155,0.4549,0.1515,0.0382,0.4223,66
-victim x gender,7.3822,0.0118,0.3344,0.0967,0.568,66
-victim x occupation_group,2.5717,0.6609,0.1974,0.1195,0.4896,66
-ever_reported x sector_group,2.874,0.2758,0.275,0.0826,0.592,38
-attack_group x sector_group,5.7981,0.4796,0.2799,0.2336,0.5426,37
+test,chi2,p_perm,cramers_v,v_lo,v_hi,n,p_holm
+victim x sector_group,1.5155,0.4549,0.1515,0.0382,0.4223,66,1.0
+victim x gender,7.3822,0.0118,0.3344,0.0967,0.568,66,0.059
+victim x occupation_group,2.5717,0.6609,0.1974,0.1195,0.4896,66,1.0
+ever_reported x sector_group,2.874,0.2758,0.275,0.0826,0.592,38,1.0
+attack_group x sector_group,5.7981,0.4796,0.2799,0.2336,0.5426,37,1.0

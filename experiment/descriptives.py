@@ -20,6 +20,21 @@ def wilson(k, n, z=1.96):
     return c - h, c + h
 
 
+def holm(p):
+    p = np.asarray(p, float)
+    adj, run = np.empty(len(p)), 0.0
+    for r, i in enumerate(np.argsort(p)):
+        run = max(run, (len(p) - r) * p[i])
+        adj[i] = min(1.0, run)
+    return adj
+
+
+def cronbach_alpha(items):
+    items = items.dropna()
+    k = items.shape[1]
+    return k / (k - 1) * (1 - items.var(ddof=1).sum() / items.sum(axis=1).var(ddof=1)), len(items), k
+
+
 def pct(k, n):
     return 100 * k / n if n else np.nan
 
@@ -155,15 +170,20 @@ def run(df: pd.DataFrame):
                      "ci_low": round(np.percentile(b, 2.5), 2), "ci_high": round(np.percentile(b, 97.5), 2),
                      "pct_4_or_5": round(pct((x >= 4).sum(), len(x)), 1)})
     rat = pd.DataFrame(rows).sort_values("mean", ascending=False); rat.to_csv(T / "D15_feature_ratings.csv", index=False)
+    alpha, n_a, k_a = cronbach_alpha(vic[list(RATINGS)])
+    pd.DataFrame([{"items": k_a, "n": n_a, "cronbach_alpha": round(alpha, 3)}]).to_csv(T / "D21_rating_reliability.csv", index=False)
+    md.append(f"- Reliability of the {k_a} feature-rating items: Cronbach's alpha = {alpha:.3f} (n = {n_a}).")
     md.append("- Feature ratings (1-5, mean): " + "; ".join(f"{x.feature} {x.mean}" for x in rat.itertuples()))
     for col, name, fn in [("encouragers", "D16_encouragers", "encourager"), ("language", "D17_language", "language"),
                           ("pref_mode", "D18_preferred_mode", "mode"), ("pref_channel", "D19_preferred_channel", "channel")]:
         m = multi_counts(vic[col], fn); m.to_csv(T / f"{name}.csv", index=False)
         md.append(f"- {fn.capitalize()} (multi-select): " + "; ".join(f"{getattr(x, fn)} {x.n} ({x.pct}%)" for x in m.head(5).itertuples()))
 
-    tt = pd.DataFrame(tests).round(4); tt.to_csv(T / "D20_association_tests.csv", index=False)
-    md.append("- Association tests (permutation chi-square, %d shuffles): " % C.N_PERM_CHI2 + "; ".join(
-        f"{x.test}: p = {x.p_perm:.3f}, V = {x.cramers_v:.2f}" for x in tt.itertuples()))
+    tt = pd.DataFrame(tests)
+    tt["p_holm"] = holm(tt.p_perm)
+    tt = tt.round(4); tt.to_csv(T / "D20_association_tests.csv", index=False)
+    md.append("- Association tests (permutation chi-square, %d shuffles; Holm-adjusted across the %d tests): " % (C.N_PERM_CHI2, len(tt)) + "; ".join(
+        f"{x.test}: p = {x.p_perm:.3f} (Holm {x.p_holm:.3f}), V = {x.cramers_v:.2f}" for x in tt.itertuples()))
 
     figures(vic, at, ct_pct, ct, rs, rat, pl)
     return "\n".join(md) + "\n"

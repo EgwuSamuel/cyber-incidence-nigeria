@@ -1,6 +1,6 @@
 # Experiment results
 
-Generated 2026-11-05 by `python run_all.py` (steps re-run individually with --only are merged in) (seed 42, CatBoost on CPU, 2000 bootstraps, 3-fold x 20 repeated CV). Every number below comes from `results/tables/`; figures are in `results/figures/`.
+Generated 2026-11-06 by `python run_all.py` (steps re-run individually with --only are merged in) (seed 42, CatBoost on CPU, 2000 bootstraps, 3-fold x 20 repeated CV). Every number below comes from `results/tables/`; figures are in `results/figures/`.
 
 **Data:** the original 66 survey responses (38 victims). No synthetic respondents are reported. Synthetic rows (SMOTEN) are generated only inside model training folds (Objective 4a) and never appear in any count, table, AHP-TOPSIS score or test fold.
 
@@ -19,12 +19,13 @@ Generated 2026-11-05 by `python run_all.py` (steps re-run individually with --on
 - Reasons for not reporting (multi-select, among the 22 who never reported): Lack of awareness of reporting channels 8 (36.4%); Incident was not serious enough 4 (18.2%); Other (please specify) 3 (13.6%); Reporting was not mandatory 2 (9.1%); Belief that no action would be taken 2 (9.1%); Lack of evidence or information about the incident 2 (9.1%)
 - Awareness of reporting channels: Fairly Aware 18 (47.4%); Aware 12 (31.6%); Not Aware 8 (21.1%). (The 77.84% 'did not know where to report' figure is from Ahmad et al. 2020, not this survey.)
 - Attack group by sector (n = 37): Education: Account takeover 35%, Financial fraud 29%, Phishing 18%, Malware 18%; Information Technology: Account takeover 46%, Financial fraud 9%, Phishing 9%, Malware 36%; Other sectors: Account takeover 44%, Financial fraud 33%, Phishing 22%, Malware 0%. Association: permutation chi-square p = 0.480, Cramer's V = 0.28 (95% CI 0.23-0.54).
+- Reliability of the 7 feature-rating items: Cronbach's alpha = 0.909 (n = 38).
 - Feature ratings (1-5, mean): Website/mobile app experience 3.55; Email/SMS notifications 3.53; Easy reporting interface 3.53; Incident tracking 3.5; Real-time alerts 3.5; AI-based incident classification 2.95; Anonymous reporting 2.82
 - Encourager (multi-select): Feedback on the outcome 24 (63.2%); Assurance of confidentiality 21 (55.3%); A simple reporting process 16 (42.1%)
 - Language (multi-select): English 35 (92.1%); Yoruba 2 (5.3%); Hausa 2 (5.3%); Pidgin 1 (2.6%)
 - Mode (multi-select): Evidence-based(Screenshot, Log files, Document) 21 (55.3%); Text-based 18 (47.4%); Voice-based 13 (34.2%); Video-based 3 (7.9%)
 - Channel (multi-select): Email 23 (60.5%); WhatsApp 16 (42.1%); Phone Call 15 (39.5%); In-person 8 (21.1%); SMS 4 (10.5%)
-- Association tests (permutation chi-square, 10000 shuffles): victim x sector_group: p = 0.455, V = 0.15; victim x gender: p = 0.012, V = 0.33; victim x occupation_group: p = 0.661, V = 0.20; ever_reported x sector_group: p = 0.276, V = 0.28; attack_group x sector_group: p = 0.480, V = 0.28
+- Association tests (permutation chi-square, 10000 shuffles; Holm-adjusted across the 5 tests): victim x sector_group: p = 0.455 (Holm 1.000), V = 0.15; victim x gender: p = 0.012 (Holm 0.059), V = 0.33; victim x occupation_group: p = 0.661 (Holm 1.000), V = 0.20; ever_reported x sector_group: p = 0.276 (Holm 1.000), V = 0.28; attack_group x sector_group: p = 0.480 (Holm 1.000), V = 0.28
 
 ## Objective 3: hybrid AHP-TOPSIS and Future Threat Index
 

@@ -14,6 +14,7 @@ from catboost import CatBoostClassifier
 from imblearn.over_sampling import SMOTEN
 from joblib import Parallel, delayed
 from . import config as C
+from .descriptives import holm
 from .plots import save, MODEL_COLOR, NEUTRAL, INK2, SURFACE, BLUE_SEQ
 
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -191,7 +192,9 @@ def run(df: pd.DataFrame):
     summ.columns = [f"{a}_{b}" for a, b in summ.columns]
     summ = summ.reset_index(); summ.to_csv(T / "M02_cv_summary.csv", index=False)
     tt = pd.DataFrame(ttests).round(4); tt.to_csv(T / "M03_corrected_ttests.csv", index=False)
-    pr = pd.DataFrame(perm_rows).round(4); pr.to_csv(T / "M04_permutation_tests.csv", index=False)
+    pr = pd.DataFrame(perm_rows)
+    pr["p_holm_within_task"] = pr.groupby("task").p_perm.transform(lambda s: holm(s.values))
+    pr = pr.round(4); pr.to_csv(T / "M04_permutation_tests.csv", index=False)
     im = (pd.DataFrame(imps).groupby(["task", "model", "feature"]).drop_macro_f1.mean().round(4)
           .reset_index().sort_values(["task", "model", "drop_macro_f1"], ascending=[True, True, False]))
     im.to_csv(T / "M05_permutation_importance.csv", index=False)
