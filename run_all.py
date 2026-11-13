@@ -19,12 +19,13 @@ if __name__ == "__main__":
     ap.add_argument("--gpu", action="store_true", help="train CatBoost on GPU (Kaggle T4 x2)")
     ap.add_argument("--fast", action="store_true", help="fewer resamples/permutations, for testing only")
     ap.add_argument("--allow-new-n", action="store_true", help="skip the n = 66 check once new responses are added")
-    ap.add_argument("--only", nargs="*", choices=["descriptives", "ahp", "models", "projections"])
+    ap.add_argument("--only", nargs="*", choices=["descriptives", "ahp", "models", "projections", "cedb"])
     args = ap.parse_args()
     if args.gpu:
         C.USE_GPU = True
     if args.fast:
         C.N_BOOT, C.N_PERM_CHI2, C.CV_REPEATS, C.N_PERM_MODEL = 200, 500, 3, 10
+        C.N_PERM_CEDB, C.CEDB_BACKTEST_MONTHS = 4, 3
 
     t0 = time.time()
     if C.RAW_CSV.exists():
@@ -34,25 +35,30 @@ if __name__ == "__main__":
     sanity(df)
     C.TABLES.mkdir(parents=True, exist_ok=True); C.FIGURES.mkdir(parents=True, exist_ok=True)
 
-    from experiment import descriptives, ahp_topsis, models, projections
+    from experiment import descriptives, ahp_topsis, models, projections, cedb
     steps = {"descriptives": descriptives.run, "ahp": ahp_topsis.run, "models": models.run,
-             "projections": projections.run}
+             "projections": projections.run, "cedb": cedb.run}
     sec_dir = C.RESULTS / "sections"; sec_dir.mkdir(parents=True, exist_ok=True)
     for k, fn in steps.items():
         if args.only and k not in args.only:
             continue
         s = time.time()
-        (sec_dir / f"{list(steps).index(k) + 1}_{k}.md").write_text(fn(df), encoding="utf-8")
+        text = fn(df)
+        if text is None:
+            print(f"[run_all] {k} skipped (data not found in data/raw/cedb)")
+            continue
+        (sec_dir / f"{list(steps).index(k) + 1}_{k}.md").write_text(text, encoding="utf-8")
         print(f"[run_all] {k} finished in {time.time() - s:.0f}s")
 
     sections = [p.read_text(encoding="utf-8") for p in sorted(sec_dir.glob("*.md"))]
-    if len(sections) == len(steps):
+    if len(sections) >= 4:
         head = [f"# Experiment results\n",
                 f"Generated {dt.date.today()} by `python run_all.py{' --fast' if args.fast else ''}` "
                 f"(steps re-run individually with --only are merged in) "
                 f"(seed {C.SEED}, CatBoost on {'GPU' if C.USE_GPU else 'CPU'}, {C.N_BOOT} bootstraps, {C.CV_SPLITS}-fold x {C.CV_REPEATS} repeated CV). "
                 f"Every number below comes from `results/tables/`; figures are in `results/figures/`.\n",
-                "**Data:** the original 66 survey responses (38 victims). No synthetic respondents are reported. "
+                "**Data:** Study 1 uses the original 66 survey responses (38 victims). Study 2 uses the University of Maryland "
+                "Cyber Events Database (real, publicly reported events; raw file not redistributed). No synthetic respondents are reported. "
                 "Synthetic rows (SMOTEN) are generated only inside model training folds (Objective 4a) and never "
                 "appear in any count, table, AHP-TOPSIS score or test fold.\n"]
         if args.fast:

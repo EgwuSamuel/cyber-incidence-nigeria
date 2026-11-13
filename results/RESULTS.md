@@ -1,8 +1,8 @@
 # Experiment results
 
-Generated 2026-11-06 by `python run_all.py` (steps re-run individually with --only are merged in) (seed 42, CatBoost on CPU, 2000 bootstraps, 3-fold x 20 repeated CV). Every number below comes from `results/tables/`; figures are in `results/figures/`.
+Generated 2026-11-13 by `python run_all.py` (steps re-run individually with --only are merged in) (seed 42, CatBoost on CPU, 2000 bootstraps, 3-fold x 20 repeated CV). Every number below comes from `results/tables/`; figures are in `results/figures/`.
 
-**Data:** the original 66 survey responses (38 victims). No synthetic respondents are reported. Synthetic rows (SMOTEN) are generated only inside model training folds (Objective 4a) and never appear in any count, table, AHP-TOPSIS score or test fold.
+**Data:** Study 1 uses the original 66 survey responses (38 victims). Study 2 uses the University of Maryland Cyber Events Database (real, publicly reported events; raw file not redistributed). No synthetic respondents are reported. Synthetic rows (SMOTEN) are generated only inside model training folds (Objective 4a) and never appear in any count, table, AHP-TOPSIS score or test fold.
 
 ## Objectives 1-2: state of incidents and people's experience by sector
 
@@ -67,3 +67,18 @@ Generated 2026-11-06 by `python run_all.py` (steps re-run individually with --on
 - **Other sectors** (n = 15): Random Forest: P(any incident) 35.1% in 3 months / 57.1% in 6; top type Account takeover (19.5 per 100 people per 3 months, 95% CI 13.3-27.1) | CatBoost: P(any incident) 31.5% in 3 months / 50.3% in 6; top type Account takeover (19.1 per 100 people per 3 months, 95% CI 10.8-28.5) | observed in last 12 months: 5.0 per 100 people per 3 months.
 - RF vs CatBoost agreement on the 3-month sector x type projections: Pearson r = 0.97.
 - Rate-assumption sensitivity (P(any incident) in 3 months, low / base / high): CatBoost Education: 13.1 / 24.0 / 40.7%; CatBoost Information Technology: 13.5 / 23.5 / 37.8%; CatBoost Other sectors: 17.9 / 31.5 / 50.3%; Random Forest Education: 12.9 / 24.0 / 42.0%; Random Forest Information Technology: 15.1 / 27.6 / 46.9%; Random Forest Other sectors: 19.6 / 35.1 / 57.1%
+
+## Study 2: Cyber Events Database (University of Maryland)
+
+- Events: 17,753 (Jan 2014 to Sep 2026), 186 target countries. Used for modelling after removing undetermined sector or subtype: 16,246. Africa (AU members): 278; ECOWAS: 51; Nigeria: 27.
+- Attack groups (all years): Server and data theft 43.8%; Ransomware and destructive 27.3%; Denial of service 11.4%; Account and message compromise 17.4%
+- Africa: Server and data theft 44.9%; Ransomware and destructive 11.8%; Denial of service 12.2%; Account and message compromise 31.2%.
+- Nigeria (27 events): sectors Public administration 15, Finance 7, Information and telecom 3, Other sectors 1; groups Server and data theft 14, Account and message compromise 7, Denial of service 4.
+- Classification of attack group from sector, region, actor type and motive. Trained on 12,605 events up to 2023, tested on 3,641 events from 2024 to September 2026. Macro-F1: RF 0.383 (95% CI 0.366-0.400), CatBoost 0.398 (0.380-0.416); baselines majority 0.170, random 0.251. Balanced accuracy RF 0.423, CatBoost 0.428. Permutation p (training labels shuffled 50 times): RF 0.020, CatBoost 0.020.
+- RF vs CatBoost on the same test events: McNemar p = 0.018; CatBoost minus RF macro-F1 +0.014 (95% CI +0.004 to +0.024).
+- Forecasts: monthly counts for 6 sectors x 4 attack groups (2014-01 to 2026-08). Rolling backtest with 24 forecast origins. MAE per series: 3 months 12-month mean 5.26; 3 months CatBoost 5.11; 3 months Random Forest 5.34; 3 months Seasonal naive 8.17; 6 months 12-month mean 10.73; 6 months CatBoost 10.04; 6 months Random Forest 10.57; 6 months Seasonal naive 14.78.
+- Paired Wilcoxon tests on absolute errors: 3m Random Forest vs Seasonal naive: p = 0.000; 3m CatBoost vs Seasonal naive: p = 0.000; 3m Random Forest vs 12-month mean: p = 0.724; 3m CatBoost vs 12-month mean: p = 0.180; 3m CatBoost vs Random Forest: p = 0.028; 6m Random Forest vs Seasonal naive: p = 0.000; 6m CatBoost vs Seasonal naive: p = 0.000; 6m Random Forest vs 12-month mean: p = 0.622; 6m CatBoost vs 12-month mean: p = 0.082; 6m CatBoost vs Random Forest: p = 0.002
+- Next 3 months after 2026-08 (CatBoost, best backtest MAE): total 343 events; by group Server and data theft 170, Ransomware and destructive 102, Denial of service 32, Account and message compromise 39; by sector Public administration 69, Health 28, Information and telecom 78, Finance 32, Education 26, Other sectors 110.
+- Next 6 months after 2026-08 (CatBoost, best backtest MAE): total 641 events; by group Server and data theft 293, Ransomware and destructive 198, Denial of service 65, Account and message compromise 86; by sector Public administration 147, Health 55, Information and telecom 139, Finance 68, Education 51, Other sectors 182.
+- Group ranking (World, n = 16,642): FTI with entropy weights Server and data theft 0.441 (share 50.9%, change +9.3 pts); Ransomware and destructive 0.072 (share 24.9%, change -3.2 pts); Denial of service 0.042 (share 10.8%, change -0.6 pts); Account and message compromise 0.011 (share 13.4%, change -5.5 pts). Top group with equal weights: Server and data theft.
+- Group ranking (Africa, n = 263): FTI with entropy weights Server and data theft 0.697 (share 64.3%, change +26.5 pts); Ransomware and destructive 0.136 (share 18.6%, change +9.2 pts); Denial of service 0.000 (share 5.7%, change -8.8 pts); Account and message compromise 0.000 (share 11.4%, change -26.9 pts). Top group with equal weights: Server and data theft.

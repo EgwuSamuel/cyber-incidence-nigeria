@@ -1,0 +1,9 @@
+h,model,mae,rmse,n
+3,12-month mean,5.26,8.457,576
+3,CatBoost,5.105,8.111,576
+3,Random Forest,5.34,8.345,576
+3,Seasonal naive,8.174,13.861,576
+6,12-month mean,10.73,17.176,576
+6,CatBoost,10.036,15.118,576
+6,Random Forest,10.575,15.672,576
+6,Seasonal naive,14.783,24.733,576

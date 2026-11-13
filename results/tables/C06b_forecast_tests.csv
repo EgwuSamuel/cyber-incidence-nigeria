@@ -1,0 +1,11 @@
+h,comparison,mae_a,mae_b,p_wilcoxon
+3,Random Forest vs Seasonal naive,5.3401,8.1736,0.0
+3,CatBoost vs Seasonal naive,5.1052,8.1736,0.0
+3,Random Forest vs 12-month mean,5.3401,5.2595,0.7242
+3,CatBoost vs 12-month mean,5.1052,5.2595,0.1804
+3,CatBoost vs Random Forest,5.1052,5.3401,0.0275
+6,Random Forest vs Seasonal naive,10.5748,14.783,0.0
+6,CatBoost vs Seasonal naive,10.0359,14.783,0.0
+6,Random Forest vs 12-month mean,10.5748,10.73,0.6218
+6,CatBoost vs 12-month mean,10.0359,10.73,0.082
+6,CatBoost vs Random Forest,10.0359,10.5748,0.0016

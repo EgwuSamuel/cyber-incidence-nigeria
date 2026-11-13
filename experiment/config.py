@@ -46,5 +46,11 @@ CB_PARAMS = dict(iterations=500, depth=4, learning_rate=0.05, auto_class_weights
                  one_hot_max_size=10, random_seed=SEED, verbose=False, thread_count=1,
                  allow_writing_files=False)
 N_JOBS = -1
+
+CEDB_DIR = ROOT / "data" / "raw" / "cedb"
+CEDB_TRAIN_END = 2023
+CEDB_LAST_MONTH = "2026-08"
+CEDB_BACKTEST_MONTHS = 23
+N_PERM_CEDB = 50
 USE_GPU = os.environ.get("CYBER_GPU") == "1"
 GPU_PARAMS = dict(task_type="GPU", devices="0:1")
